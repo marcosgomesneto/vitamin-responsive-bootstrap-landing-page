@@ -3,10 +3,13 @@ var gulp = require('gulp');
 const browsersync = require("browser-sync").create();
 var sass = require('gulp-sass');
 var cssnano = require('gulp-cssnano');
+var rename = require('gulp-rename');
+var minify = require('gulp-minify-css');
+const merge = require("merge-stream");
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var webpack = require('gulp-webpack');
-
+var concat = require('gulp-concat');
 
 // BrowserSync
 function browserSync(done) {
@@ -34,19 +37,26 @@ function css() {
         cascade: false
       }))
       .pipe(cssnano())
+      .pipe(minify())
       .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./public/css/'))
 };
 
 function vendorCss() {
-    return gulp.src('./resources/scss/vendor.scss')
-      .pipe(sourcemaps.init())
-      .pipe(sass().on('error', sass.logError))
-      .pipe(autoprefixer({
-        cascade: false
-      }))
-      .pipe(cssnano())
-      .pipe(sourcemaps.write('./'))
+  // Bootstrap
+  gulp.src('./node_modules/font-awesome/fonts/**/*')
+  .pipe(gulp.dest('./public/css/fonts'));
+  var fontAwesome = gulp.src('./node_modules/font-awesome/css/font-awesome.min.css');
+  var bootstrap = gulp.src('./node_modules/bootstrap/dist/css/bootstrap.min.css');
+  var animateCss = gulp.src('./node_modules/animate.css/animate.min.css');
+  return merge(bootstrap, animateCss, fontAwesome)
+    .pipe(sourcemaps.init())
+    .pipe(concat('vendor.css'))
+    .pipe(autoprefixer({
+      cascade: false
+    }))
+    .pipe(cssnano())
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./public/css/'))
 };
 
@@ -74,13 +84,17 @@ function vendorJs() {
 // Watch files
 function watchFiles() {
     gulp.watch("./resources/scss/**/*", css);
-    gulp.watch("./resources/js/**/*", appJs, vendorJs);
+    gulp.watch("./resources/scss/vendor.scss", vendorCss);
+    gulp.watch("./resources/js/app.js", appJs);
+    gulp.watch("./resources/js/vendor.js", vendorJs);
     gulp.watch("./public/**/*.html", browserSyncReload);
 }
 
-const build = gulp.series(vendorCss, css, appJs, vendorJs);
+const vendor = gulp.series(vendorCss);
+const build = gulp.series(vendor, css, appJs, vendorJs);
 const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
 
+exports.vendor = vendor;
 exports.css = css;
 exports.build = build;
 exports.watch = watch;
