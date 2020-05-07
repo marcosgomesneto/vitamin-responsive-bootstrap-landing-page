@@ -1,0 +1,169 @@
+/* About Us Section
+  --------------------------------*/
+  #about {
+    padding: 80px 0;
+    p{
+      margin-bottom:0;
+    }
+    .btn-default{
+      padding-left:20px;
+      padding-right:20px;
+    }
+    h2{
+      margin-bottom: 50px;
+    }
+    .title{
+      text-align: center;
+    }
+    .card{
+      box-shadow: 1px 1px 10px rgba(0,0,0,.17);
+      border-radius: 10px;
+			padding-left: 50px;
+			margin-bottom: 60px;
+			margin-left: 100px;
+			&.right{
+				margin-right: 100px;
+				margin-left: 0px;
+				padding-left: 0px;
+				padding-right: 50px;
+				.row{
+					flex-direction: row-reverse;
+					img{
+						right: -170px;
+						left: auto;
+					}
+					.pricebox{
+						text-align: left;
+						.old-price{
+							right: auto;
+							left: 0;
+						}
+						.discount{
+							right: auto;
+							left: 0;
+						}
+						&:before{
+							content: " ";
+							background-color: #ffb201;
+							height: 100%;
+							width: 5px;
+							left: auto;
+							right: 0;
+						}
+					}
+				}
+			}
+      .card-body{
+        padding-top: 25px;
+				padding-bottom: 35px;
+				padding-right: 5px;
+      }
+      .pricebox{
+				text-align: right;
+				position: relative;
+        .price{
+            font-size: 50px;
+						font-weight: 700;
+				}
+				.old-price{
+					color: #b7b7b7;
+					font-size: 22px;
+					font-weight: 700;
+					right: 0;
+					text-decoration: line-through;
+					top: -16px;
+					position: absolute;
+				}
+				.discount{
+					color: #22bc5a;
+					font-weight: 400;
+					font-size: 16px;
+					position: absolute;
+					right: 0;
+				}
+				&:before{
+					content: " ";
+					background-color: #ffb201;
+					height: 100%;
+					width: 5px;
+					left: 0px;
+					position: absolute;
+				}
+			}
+      img{
+        position: absolute;
+        left: -170px;
+        height: 321px;
+        top: -6%;
+      }
+      ul{
+          margin: 20px 0;
+      }
+    }
+  }
+
+  
+  #about .about-container .background {
+    min-height: 300px;
+    background: url(../img/about-img.jpg) center top no-repeat;
+    margin-bottom: 10px;
+  }
+
+  
+  @media (max-width: 768px) {
+    #about .about-container .title {
+      padding-top: 15px;
+    }
+  }
+  
+  #about .about-container p {
+    line-height: 26px;
+  }
+  
+  #about .about-container p:last-child {
+    margin-bottom: 0;
+  }
+  
+  #about .about-container .icon-box {
+    background: #fff;
+    background-size: cover;
+    padding: 0 0 30px 0;
+  }
+  
+  #about .about-container .icon-box .icon {
+    float: left;
+    background: #fff;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 50%;
+    border: 2px solid #2dc997;
+  }
+  
+  #about .about-container .icon-box .icon i {
+    color: #2dc997;
+    font-size: 24px;
+  }
+  
+  #about .about-container .icon-box .title {
+    margin-left: 80px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+  
+  #about .about-container .icon-box .title a {
+    color: #111;
+  }
+  
+  #about .about-container .icon-box .description {
+    margin-left: 80px;
+    line-height: 24px;
+    font-size: 14px;
+  }
+  
