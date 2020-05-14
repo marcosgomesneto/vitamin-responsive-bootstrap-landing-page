@@ -1,0 +1,14 @@
+@media (max-width: 768px) {
+    #contact{
+        text-align: center;
+    
+        .info i{
+            float: inherit;
+            display: inline-block;
+        }
+        .info p{
+            padding-left: 0;
+            text-align: center;
+        }
+    }
+}

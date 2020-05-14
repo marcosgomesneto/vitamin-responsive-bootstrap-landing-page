@@ -10,6 +10,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var webpack = require('gulp-webpack');
 var concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
 
 // BrowserSync
 function browserSync(done) {
@@ -46,9 +47,9 @@ function vendorCss() {
   // Bootstrap
   gulp.src('./node_modules/font-awesome/fonts/**/*')
   .pipe(gulp.dest('./public/css/fonts'));
-  var fontAwesome = gulp.src('./node_modules/font-awesome/css/font-awesome.min.css');
-  var bootstrap = gulp.src('./node_modules/bootstrap/dist/css/bootstrap.min.css');
-  var animateCss = gulp.src('./node_modules/animate.css/animate.min.css');
+  var fontAwesome = gulp.src('./node_modules/font-awesome/css/font-awesome.min.css').pipe(minify());
+  var bootstrap = gulp.src('./node_modules/bootstrap/dist/css/bootstrap.min.css').pipe(minify());
+  var animateCss = gulp.src('./node_modules/animate.css/animate.min.css').pipe(minify());
   return merge(bootstrap, animateCss, fontAwesome)
     .pipe(sourcemaps.init())
     .pipe(concat('vendor.css'))
@@ -76,7 +77,8 @@ function vendorJs() {
     .pipe(webpack({
         output: {
             filename: 'vendor.js',
-        }    
+        },
+        plugins: [uglify],
     }))
     .pipe(gulp.dest('./public/js'));
 };

@@ -65,7 +65,7 @@
 				width: 330px;
 				left: -100px;
 				top: 50px
-      }
+            }
 			&.right{
 				margin-right: 100px;
 				margin-left: 0px;
@@ -79,7 +79,10 @@
 					top: 10px
 				}
 				.row{
-					flex-direction: row-reverse;
+               flex-direction: row-reverse;
+               .col:last-child{
+                  -ms-flex: 0 0 210px;flex: 0 0 210px;
+               }
 					.pricebox{
 						text-align: left;
 						.old-price{
@@ -103,8 +106,12 @@
 			}
       .card-body{
         padding-top: 25px;
-				padding-bottom: 35px;
-				padding-right: 5px;
+         padding-bottom: 35px;
+         padding-right: 5px;
+         .row > .col:last-child{
+            -ms-flex: 0 0 210px;
+            flex: 0 0 210px;
+         }
       }
       .pricebox{
 				text-align: right;
@@ -153,7 +160,23 @@
 
   
   @media (max-width: 767.98px) {
+    #about-items{
+        .container{
+            text-align: center;
+            .col .row{
+                .col:first-child{
+                    margin: 0 auto;
+                }
+                .col:last-child{
+                    margin: 15px auto;
+                }
+            }
+        }
+    }
     #about{
+        > .container{
+          padding: 0;
+        }
 	  padding: 15px 15px;
         .card{
             width: 100%;
@@ -162,8 +185,37 @@
             margin-left: 0;
             margin-right: 0;
             margin-top: 160px;
+            &.right,
+            &{
+               .container > .row{
+                  flex-direction: column-reverse;
+                  .col:last-child{
+                  flex: auto;
+                  }
+                  .pricebox{
+                     text-align: right;
+                     margin-top: -24px;
+                     margin-bottom: 37px;
+                     text-align: right;
+                     .old-price,
+                     .discount{
+                        right: 0;
+                        left: auto;
+                     }
+                     &:before{
+                        content: none;
+                    }
+                  }
+               }
+            }
             .card-body{
                 padding-top: 130px;
+                .container > .row{
+                    flex-direction: column-reverse;
+                    .col:last-child{
+                     flex: auto;
+                    }
+                }
             }
             &.max6{
                 margin-left: 0;
@@ -190,6 +242,35 @@
     }
   }
   
+
+  @media (max-width: 400px) {
+     #about{
+      padding: 0;
+     }
+      #hero{
+         .hero-container{
+            .container{
+               img.maxteron-pote{
+                  width: 40%;
+               }
+               .list-items{
+                  margin-left: 36%;
+                  li{
+                     font-size: 0.900em;
+                     margin-top: 7px;
+                     &:before{
+                        height: 10px;
+                        width: 10px;
+                        left: -20px;
+                        top: 7px;
+                     }
+                  }
+               }
+            }
+         }
+      }
+
+  }
   
   #about .about-container p {
     line-height: 26px;

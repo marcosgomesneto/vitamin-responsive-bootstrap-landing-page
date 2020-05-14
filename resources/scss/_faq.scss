@@ -1,0 +1,53 @@
+.webp #faq{
+  background-image: url(../img/ribbons.webp);
+}
+.no-webp #faq{
+  background-image: url(../img/ribbons.png);
+}
+#faq{
+    background-repeat: no-repeat;
+    background-size: initial;
+    .card{
+        margin-bottom: 15px;
+        background-color: #333;
+        color: #ffffff;
+    }
+    button.btn-link{
+      padding-left: 23px;
+      color: #ffffff;
+      text-align: left;
+    }
+    .arrow {
+        top: 25px;
+        position: absolute;
+        border: solid #ffb200;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        margin-left: -23px;
+        transition: transform 0.5s;
+        &.right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+          }
+          
+        &.left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+          }
+          
+        &.up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+          }
+          
+        &.down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+          }
+    }
+    button:not(.collapsed) i.arrow{
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+    }
+}

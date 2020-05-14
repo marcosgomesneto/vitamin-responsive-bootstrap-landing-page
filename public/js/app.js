@@ -47,6 +47,9 @@
 	!(function($) {
 	    "use strict";
 	  
+	    $("#termosModal .modal-body").load("termos-e-condicoes.html"); 
+	    $("#mauticFormContent").load("mautic-form.html");
+
 	    // Header fixed and Back to top button
 	    $(window).scroll(function() {
 	      if ($(this).scrollTop() > 100) {
@@ -116,7 +119,7 @@
 	    }
 	  
 	    // Smoth scroll on page hash links
-	    $('a[href*="#"]:not([href="#"])').on('click', function() {
+	    $('a[href*="#"]:not([href="#"]):not(.carousel-control)').on('click', function() {
 	      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
 	  
 	        var target = $(this.hash);
@@ -164,6 +167,16 @@
 	        $(selectedFilter).fadeIn(100).css('transform', 'scale(1)');
 	        $("#portfolio-wrapper").fadeTo(300, 1);
 	      }, 300);
+	    });
+
+	    $('a.carousel-control.left').click(function(e) {
+	      e.preventDefault();
+	      $('#myCarousel').carousel('prev');
+	    });
+	    
+	    $('a.carousel-control.right').click(function(e) {
+	      e.preventDefault();
+	      $('#myCarousel').carousel('next');
 	    });
 	  
 	    // Initiate venobox (lightbox feature used in portofilo)
