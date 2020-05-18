@@ -42,3 +42,32 @@ a.btn-default:hover::before{
 a.btn-default:hover{
     color: #fff;
 }
+a.btn-default.black{
+    background-color: #111;
+    background-image: none;
+    box-shadow: 1px 1px 21px rgba(54, 54, 54, 0.75);
+    transition: background-color 0.5s ease;
+}
+a.btn-default.black:hover{
+    box-shadow: 1px 1px 21px rgba(224, 155, 155, 0.75);
+    background-color: #660101;
+}
+
+.night-theme{
+    a.btn-default{
+        &:hover:before{
+            background-color: transparent;
+        }      
+    }
+    a.btn-default.red,
+    button.btn-default.red{
+        background-image: linear-gradient(84deg,#9d0202,#a20000);
+        box-shadow: 1px 1px 21px rgba(181, 3, 3, 0.75);
+        &:hover:before{
+          background-color: transparent;
+        }
+        &:hover{
+          background-image: linear-gradient(84deg,#9d0202,#cd0000);
+        }
+      }
+}

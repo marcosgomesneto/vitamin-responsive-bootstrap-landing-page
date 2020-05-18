@@ -213,3 +213,98 @@
       }
     }
   }
+
+
+  .night-theme{
+    
+    #header{
+      color: #fff;
+      background-color: transparent;
+      .nav-menu a{
+        color: #fff;
+      }
+      &.header-fixed {
+        background: rgba(147, 24, 33, 0.9);
+      }
+    }
+    #hero{
+
+      color: #fff;
+      background-image: none;
+      background-color: #1f1f1f;
+      .hero-container{
+        .container{
+          pointer-events : none;
+          a{
+            pointer-events: all;
+          }
+        }
+      }
+      h1,h2{
+        color: #fff;
+      }
+    }
+    #faq{
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+    #about-items, #faq, #contact{
+      color: #fff;
+      .card{
+        background-color: #b61924;
+      }
+      p, h1, h2, h3, h4, h5{
+        color: #fff;
+      }
+    }
+    #about-items{
+      background-color: #111;
+    }
+    #about{
+      .card .pricebox .discount{
+        color: #ffb200;
+      }
+    }
+    &.webp #contact{
+      /*background-image: url(../img/contact-bg.webp);*/
+    }
+    &.no-webp #contact{
+      /*background-image: url(../img/contact-bg.jpg);*/
+    }
+    #contact{
+      padding: 80px 0 40px;
+      background-size: contain;
+      background-position-x: right;
+      background-repeat: no-repeat;
+      background-color: #000;
+    }
+    canvas {
+      display: block;
+      vertical-align: bottom;
+    } /* ---- particles.js container ---- */
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      top: 0;
+      height: 100%;
+      background-color: #b61924;
+      background-image: url();
+      background-position: 50% 50%;
+    } /* ---- stats.js ---- */
+    .js-count-particles {
+      font-size: 1.1em;
+    }
+    #stats {
+      border-radius: 3px 3px 0 0;
+      overflow: hidden;
+    }
+    #footer{
+      background: #111111;
+    }
+    #faq{
+      background: #111;
+    }
+  }

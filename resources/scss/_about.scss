@@ -323,3 +323,19 @@
     font-size: 14px;
   }
   
+  .night-theme #about{
+    .card{
+      border: none;
+      background: rgb(17,17,17);
+      
+      &.right{
+        
+      }
+    }
+    h1, h2, h3, h4, h5, p, li, .price{
+      color: #fff;
+    }
+    h2.title{
+      color: #111;
+    }
+  }
