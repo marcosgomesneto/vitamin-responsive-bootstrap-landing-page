@@ -1,5 +1,4 @@
-# mgn-bootstrap-landing-start-kit
-Vitamin - Responsive Bootstrap Single Product Lading Page
+# Vitamin - Responsive Bootstrap Single Product Lading Page
 
 Vitamin is Modern, Beautiful and Fast Landing page for Single Product with Bootstrap and HTML5
 
