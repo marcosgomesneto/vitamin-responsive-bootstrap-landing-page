@@ -322,6 +322,13 @@
     line-height: 24px;
     font-size: 14px;
   }
+
+  .webp.night-theme #about .card{
+    background-image: url(../img/ribbons-red.webp);
+  }
+  .no-webp.night-theme #about .card{
+    background-image: url(../img/ribbons-red.png);
+  }
   
   .night-theme #about{
     .card{
@@ -329,7 +336,7 @@
       background: rgb(17,17,17);
       
       &.right{
-        
+        background-position: right;
       }
     }
     h1, h2, h3, h4, h5, p, li, .price{

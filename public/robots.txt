@@ -1,5 +1,3 @@
 # Group 2
 User-agent: *
 Allow: /
-
-#Sitemap: https://maxteron-oficial.com.br/sitemap.xml

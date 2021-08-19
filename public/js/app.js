@@ -47,7 +47,7 @@
 	!(function($) {
 	    "use strict";
 	  
-	    $("#termosModal .modal-body").load("termos-e-condicoes.html"); 
+	    $("#termosModal .modal-body").load("terms-and-conditions.html"); 
 	    $("#mauticFormContent").load("mautic-form.html");
 
 	    // Header fixed and Back to top button
