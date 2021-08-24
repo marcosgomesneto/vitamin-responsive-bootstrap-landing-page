@@ -214,9 +214,22 @@
     }
   }
 
-
+  .doctor-white-icon,
+  .heart-white-icon,
+  .molecular-white-icon{
+    display: none;
+  }
   .night-theme{
-    
+    .doctor-white-icon,
+    .heart-white-icon,
+    .molecular-white-icon{
+      display: block;
+    }
+    .doctor-icon,
+    .heart-icon,
+    .molecular-icon{
+      display: none;
+    }
     #header{
       color: #fff;
       background-color: transparent;
