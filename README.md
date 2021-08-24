@@ -34,4 +34,4 @@ cd tools
 ./convert.sh
 ```
 
-Tags: modern, clean, responsive, fashion, crative,  woocommerce, shopping
+Tags: modern, clean, responsive, fashion, crative,  woocommerce, shopping, single produtct, medical, landing page, bootstrap, html5, responsive
