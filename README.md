@@ -18,6 +18,11 @@ Sections
 - Terms and Conditions Popup
 - Contact
 
+All Files in 'public' folder
+
+Open public/index.html - For light theme
+Open public/index-dark.html - For dark theme
+
 ## Project setup
 ```
 npm install
